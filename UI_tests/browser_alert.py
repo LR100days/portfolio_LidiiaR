@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-URL = "replaceme"
+URL = "replace me"
 
 # To keep the browser window opened
 chrome_options = webdriver.ChromeOptions()
