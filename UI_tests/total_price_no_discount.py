@@ -30,10 +30,10 @@ proceed_to_checkout = driver.find_element(By.XPATH, "//button[text()='PROCEED TO
 prices = driver.find_elements(By.XPATH, "//td[5]/p")
 expected_sum = 0
 for price in prices:
-    expected_sum += int(price.text)
+    expected_sum += float(price.text)
 
 actual_total_sum = driver.find_element(By.CSS_SELECTOR, ".totAmt")
-assert expected_sum == int(actual_total_sum.text)
+assert expected_sum == float(actual_total_sum.text)
 
 # Validate default discount
 discount = driver.find_element(By.CSS_SELECTOR, ".discountPerc")
@@ -41,7 +41,7 @@ assert discount.text == "0%"
 
 # Validate total sum to pay
 sum_after_discount = driver.find_element(By.CSS_SELECTOR, ".discountAmt")
-assert expected_sum == int(sum_after_discount.text)
+assert expected_sum == float(sum_after_discount.text)
 
 # End program execution
 driver.quit()
